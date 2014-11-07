@@ -1,0 +1,4 @@
+- login screen
+- admin dashboard
+  - add/edit product
+  - delete product
