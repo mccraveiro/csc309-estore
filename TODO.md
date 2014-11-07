@@ -2,3 +2,15 @@
 - admin dashboard
   - add/edit product
   - delete product
+  - view orders
+  - delete customer
+  - delete order
+- create account
+- browse store
+- add item to shopping cart
+- shopping cart view
+  - edit quantity
+  - delete items
+- checkout (get payment information)
+- show receipt
+- email receipt
