@@ -8,9 +8,12 @@ Class Customer extends CI_Model {
   var $login = '';
   var $email = '';
 
-  function login($login, $password) {
+  function __construct() {
 
-    $this->db->select('id, login, password');
+  }
+
+  function verify_user($login, $password) {
+
     $this->db->from('customers');
     $this->db->where('login', $login);
     $this->db->where('password', $password);
@@ -19,10 +22,10 @@ Class Customer extends CI_Model {
     $query = $this->db->get();
 
     if ($query->num_rows() == 1) {
-      return true;
-    } else {
-      return false;
+      return $query->row();
     }
+
+    return false;
   }
 }
 

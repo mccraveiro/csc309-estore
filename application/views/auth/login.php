@@ -13,7 +13,7 @@
       <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
-          <a class="navbar-brand" href="#">eStore</a>
+          <?php echo anchor('store', 'eStore', array('class' => 'navbar-brand')); ?>
         </div>
       </div><!-- /.container-fluid -->
     </nav>
@@ -29,27 +29,56 @@
       </div>
       <div class="row">
         <div class="col-xs-4 col-xs-offset-4">
-          <form class="form-horizontal" action="/login/validate" method="POST" role="form">
+          <?php echo form_open('auth', array('class' => 'form-horizontal', 'role' => 'form')); ?>
             <div class="form-group">
               <label for="inputLogin" class="col-sm-2 control-label">Login</label>
               <div class="col-sm-10">
-                <input type="login" class="form-control" id="inputLogin" name="login" placeholder="Login">
+                <?php echo form_input(array(
+                  'name' => 'login',
+                  'value' => set_value('login'),
+                  'class' => 'form-control',
+                  'id' => 'inputLogin',
+                  'placeholder' => 'Login',
+                  'maxlength' => '16'
+                )); ?>
               </div>
             </div>
             <div class="form-group">
               <label for="inputPassword" class="col-sm-2 control-label">Password</label>
               <div class="col-sm-10">
-                <input type="password" class="form-control" id="inputPassword" name="password" placeholder="Password">
+                <?php echo form_password(array(
+                  'name' => 'password',
+                  'value' => '',
+                  'class' => 'form-control',
+                  'id' => 'inputPassword',
+                  'placeholder' => 'Password',
+                  'maxlength' => '16'
+                )); ?>
               </div>
             </div>
             <div class="form-group">
               <div class="col-sm-offset-2 col-sm-10">
-                <button type="submit" class="btn btn-default">Sign in</button>
+                <?php echo form_submit(array(
+                  'name' => 'signin',
+                  'value' => 'Sign in',
+                  'class' => 'btn btn-default'
+                )); ?>
               </div>
             </div>
-          </form>
+          <?php echo form_close(); ?>
         </div>
       </div>
+      <?php if (validation_errors() !== '') { ?>
+        <div class="row login-title">
+          <div class="col-xs-4 col-xs-offset-4">
+            <div class="row">
+              <div class="col-sm-offset-2 col-sm-10">
+                <div class="alert alert-danger" role="alert"><?php echo validation_errors(); ?></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      <?php } ?>
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>

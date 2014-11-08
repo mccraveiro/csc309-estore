@@ -1,4 +1,4 @@
-- login screen (Mateus)
+- login validation method
 - admin dashboard
   - add/edit product
   - delete product
