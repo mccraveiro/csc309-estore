@@ -14,3 +14,4 @@
 - checkout (get payment information)
 - show receipt
 - email receipt
+- password validation (min length 6 char)

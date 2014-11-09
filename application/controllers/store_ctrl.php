@@ -1,6 +1,6 @@
 <?php  if (!defined('BASEPATH')) exit('No direct script access allowed');
 
-class Store extends CI_Controller {
+class Store_Ctrl extends CI_Controller {
 
   function __construct() {
     // Call the Controller constructor
@@ -62,20 +62,6 @@ class Store extends CI_Controller {
 
       $this->load->view('product/newForm.php');
     }
-  }
-
-  function read($id) {
-    $this->load->model('product_model');
-    $product = $this->product_model->get($id);
-    $data['product']=$product;
-    $this->load->view('product/read.php',$data);
-  }
-
-  function editForm($id) {
-    $this->load->model('product_model');
-    $product = $this->product_model->get($id);
-    $data['product']=$product;
-    $this->load->view('product/editForm.php',$data);
   }
 
   function update($id) {

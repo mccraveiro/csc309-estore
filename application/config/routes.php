@@ -38,8 +38,14 @@
 |
 */
 
-$route['default_controller'] = 'store';
-$route['auth'] = 'auth';
+$route['default_controller'] = 'store_ctrl';
+
+$route['auth'] = 'auth_ctrl';
+$route['logout'] = 'auth_ctrl/logout';
+
+$route['product/(:num)'] = 'product_ctrl/view/$1';
+$route['product/edit/(:num)'] = 'product_ctrl/edit/$1';
+
 $route['404_override'] = '';
 
 /* End of file routes.php */
