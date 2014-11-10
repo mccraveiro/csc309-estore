@@ -1,10 +1,9 @@
-- login validation method
 - admin dashboard
-  - add/edit product
   - delete product
   - view orders
   - delete customer
   - delete order
+- login validation method
 - create account
 - browse store
 - add item to shopping cart
@@ -15,3 +14,4 @@
 - show receipt
 - email receipt
 - password validation (min length 6 char)
+- price validation
