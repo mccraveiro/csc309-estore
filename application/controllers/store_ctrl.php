@@ -12,7 +12,6 @@ class Store_Ctrl extends CI_Controller {
     $products = $this->product_model->getAll();
 
     $data['products'] = $products;
-    $data['session'] = $this->session->all_userdata();
 
     $this->load->view('store.php', $data);
   }

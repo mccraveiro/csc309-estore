@@ -16,7 +16,6 @@ class Product_Ctrl extends CI_Controller {
     $product = $this->product_model->get($id);
 
     $data['product'] = $product;
-    $data['session'] = $this->session->all_userdata();
 
     $this->load->view('product/view.php', $data);
   }
@@ -50,7 +49,6 @@ class Product_Ctrl extends CI_Controller {
     $product->price       = set_value('price', $product->price);
 
     $data['product'] = $product;
-    $data['session'] = $this->session->all_userdata();
 
     $this->load->view('product/edit.php', $data);
   }
@@ -91,7 +89,6 @@ class Product_Ctrl extends CI_Controller {
     $product->price       = set_value('price');
 
     $data['product'] = $product;
-    $data['session'] = $this->session->all_userdata();
 
     $this->load->view('product/new.php', $data);
   }

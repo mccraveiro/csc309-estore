@@ -17,7 +17,7 @@
         </div>
         <div class="col-sm-2 text-right">
           <?php
-            if (isset($session['admin']) && $session['admin']) {
+            if (is_admin()) {
               echo anchor('product/new', 'Add New', array('class' => 'btn btn-warning'));
             }
           ?>
@@ -36,7 +36,7 @@
                   <p><?= $product->description ?></p>
                   <p>
                     <?php
-                      if (isset($session['admin']) && $session['admin']) {
+                      if (is_admin()) {
                         echo anchor('product/edit/'.$product->id, 'Edit', array('class' => 'btn btn-primary', 'role' => 'button'));
                       } else {
                         echo anchor('product/'.$product->id, 'Add to cart', array('class' => 'btn btn-primary', 'role' => 'button'));

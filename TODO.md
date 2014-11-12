@@ -1,4 +1,3 @@
-- login validation method (Mateus)
 - secure new/edit/delete for admin only (Mateus)
 - create account (Anderson)
 - admin dashboard

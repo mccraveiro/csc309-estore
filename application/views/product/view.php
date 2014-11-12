@@ -26,7 +26,7 @@
           </div>
           <div class="col-xs-12 col-sm-4 col-lg-3">
             <?php
-              if (isset($session['admin']) && $session['admin']) {
+              if (is_admin()) {
             ?>
               <div class="well">
                 <?= anchor('/product/edit/'.$product->id, 'Edit', array('class' => 'btn btn-warning btn-block', 'role' => 'button')) ?>

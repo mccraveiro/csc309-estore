@@ -14,7 +14,7 @@
       <ul class="nav navbar-nav navbar-right">
         <li>
           <?php
-            if (isset($session['login'])) {
+            if (is_logged()) {
               echo anchor('logout', 'Log out');
             } else {
               echo anchor('auth', 'Log in');
