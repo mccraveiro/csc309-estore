@@ -1,15 +1,17 @@
 - create account (Anderson)
-- add item to shopping cart (Mateus)
-- shopping cart view
+- shopping cart view (Mateus)
   - edit quantity
   - delete items
 - admin dashboard
   - view orders
   - delete customer
   - delete order
-- checkout (get payment information)
-- show receipt
-- email receipt
 - password validation (min length 6 char)
 - price validation
 - remove product image on delete
+- fix add to cart button on product view
+- checkout (get payment information)
+- show receipt
+- email receipt
+- add notification for actions
+  - notification when added to cart
