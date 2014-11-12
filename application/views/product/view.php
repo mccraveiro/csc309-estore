@@ -30,7 +30,7 @@
             ?>
               <div class="well">
                 <?= anchor('/product/edit/'.$product->id, 'Edit', array('class' => 'btn btn-warning btn-block', 'role' => 'button')) ?>
-                <?= anchor('/', 'Delete', array('class' => 'btn btn-danger btn-block', 'role' => 'button')) ?>
+                <?= anchor('/product/delete/'.$product->id, 'Delete', array('class' => 'btn btn-danger btn-block', 'role' => 'button')) ?>
               </div>
             <?php } else { ?>
               <div class="well">

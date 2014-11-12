@@ -95,6 +95,16 @@ class Product_Ctrl extends CI_Controller {
 
     $this->load->view('product/new.php', $data);
   }
+
+  function delete($id) {
+    $this->load->model('product_model');
+
+    if (isset($id)) {
+      $this->product_model->delete($id);
+    }
+
+    redirect('/');
+  }
 }
 
 ?>

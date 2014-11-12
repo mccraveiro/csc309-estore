@@ -16,14 +16,4 @@ class Store_Ctrl extends CI_Controller {
 
     $this->load->view('store.php', $data);
   }
-
-  function delete($id) {
-    $this->load->model('product_model');
-
-    if (isset($id))
-      $this->product_model->delete($id);
-
-    //Then we redirect to the index page again
-    redirect('store/index', 'refresh');
-  }
 }

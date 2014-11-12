@@ -44,8 +44,9 @@ $route['auth'] = 'auth_ctrl';
 $route['logout'] = 'auth_ctrl/logout';
 
 $route['product/(:num)'] = 'product_ctrl/view/$1';
-$route['product/edit/(:num)'] = 'product_ctrl/edit/$1';
 $route['product/new'] = 'product_ctrl/new_product';
+$route['product/edit/(:num)'] = 'product_ctrl/edit/$1';
+$route['product/delete/(:num)'] = 'product_ctrl/delete/$1';
 
 $route['404_override'] = '';
 

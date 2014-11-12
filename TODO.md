@@ -1,5 +1,4 @@
 - admin dashboard
-  - delete product
   - view orders
   - delete customer
   - delete order
@@ -15,3 +14,5 @@
 - email receipt
 - password validation (min length 6 char)
 - price validation
+- remove product image on delete
+- secure new/edit/delete for admin only
