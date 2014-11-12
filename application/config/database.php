@@ -44,15 +44,15 @@
 | The $active_record variables lets you determine whether or not to load
 | the active record class
 */
-  
+
 $active_group = 'default';
 $active_record = TRUE;
 
 $db['default']['hostname'] = '127.0.0.1';
-$db['default']['username'] = 'csc309A3';  
+$db['default']['username'] = 'csc309A3';
 $db['default']['password'] = 'csc309pass';
-$db['default']['database'] = 'estore';  
-$db['default']['dbdriver'] = 'mysql';
+$db['default']['database'] = 'estore';
+$db['default']['dbdriver'] = 'mysqli';
 $db['default']['dbprefix'] = '';
 $db['default']['pconnect'] = TRUE;
 $db['default']['db_debug'] = FALSE;
