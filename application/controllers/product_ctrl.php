@@ -21,6 +21,10 @@ class Product_Ctrl extends CI_Controller {
   }
 
   function edit($id) {
+    if (!is_admin()) {
+      redirect('/');
+    }
+
     $this->load->library('form_validation');
     $this->form_validation->set_rules('name', 'Name', 'required|max_length[45]');
     $this->form_validation->set_rules('description', 'Description', 'required');
@@ -54,6 +58,10 @@ class Product_Ctrl extends CI_Controller {
   }
 
   function new_Product() {
+    if (!is_admin()) {
+      redirect('/');
+    }
+
     $this->load->library('form_validation');
     $this->form_validation->set_rules('name', 'Name', 'required|max_length[45]');
     $this->form_validation->set_rules('description', 'Description', 'required');
@@ -94,6 +102,10 @@ class Product_Ctrl extends CI_Controller {
   }
 
   function delete($id) {
+    if (!is_admin()) {
+      redirect('/');
+    }
+
     $this->load->model('product_model');
 
     if (isset($id)) {
