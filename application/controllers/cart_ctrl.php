@@ -6,6 +6,12 @@ class Cart_Ctrl extends CI_Controller {
     parent::__construct();
   }
 
+  function index() {
+    $data['cart_contents'] = $this->cart->contents();
+    $data['cart_total'] = $this->cart->total();
+    $this->load->view('cart/view.php', $data);
+  }
+
   function add($id) {
     $this->load->model('product_model');
     $product = $this->product_model->get($id);
@@ -17,8 +23,8 @@ class Cart_Ctrl extends CI_Controller {
       'name'  => $product->name
     ));
 
-    $contents = $this->cart->contents();
-    $this->output->set_output(json_encode($contents, JSON_PRETTY_PRINT));
+    $total_items = $this->cart->total_items();
+    $this->output->set_output($total_items);
   }
 }
 

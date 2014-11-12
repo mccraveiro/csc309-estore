@@ -1,0 +1,18 @@
+.cart-table-header,
+.cart-table-footer {
+  font-weight: bold;
+}
+
+.cart-table-footer {
+  margin-bottom: 120px;
+}
+
+.cart-table-header-separator hr {
+  border-top: 1px solid gray !important;
+  margin-top: 5px !important;
+}
+
+.quantity-update-input {
+  width: 70px !important;
+}
+

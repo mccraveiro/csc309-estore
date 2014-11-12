@@ -1,7 +1,6 @@
 - create account (Anderson)
-- shopping cart view (Mateus)
-  - edit quantity
-  - delete items
+- edit shopping cart quantity
+- delete shopping cart items
 - admin dashboard
   - view orders
   - delete customer
@@ -13,5 +12,6 @@
 - checkout (get payment information)
 - show receipt
 - email receipt
+- add link on the product image to product view
 - add notification for actions
   - notification when added to cart

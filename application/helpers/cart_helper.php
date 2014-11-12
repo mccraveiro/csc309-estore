@@ -5,6 +5,6 @@ if (!function_exists('cart_number_of_items')) {
     $CI =& get_instance();
     $CI->load->library('cart');
 
-    return count($CI->cart->contents());
+    return $CI->cart->total_items();
   }
 }

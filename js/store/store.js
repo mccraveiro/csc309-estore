@@ -4,10 +4,7 @@ $(document).ready(function () {
   function addToCart() {
     var id = $(this).attr('data-id');
     $.get('cart/add/'+id, function (data) {
-      var contents = JSON.parse(data);
-      var numOfItems = Object.keys(contents).length;
-
-      console.log(contents);
+      var numOfItems = parseInt(data);
       updateNavbarQty(numOfItems);
     });
   }
