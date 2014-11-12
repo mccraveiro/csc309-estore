@@ -1,9 +1,10 @@
+- login validation method (Mateus)
+- secure new/edit/delete for admin only (Mateus)
+- create account (Anderson)
 - admin dashboard
   - view orders
   - delete customer
   - delete order
-- login validation method
-- create account
 - browse store
 - add item to shopping cart
 - shopping cart view
@@ -15,4 +16,3 @@
 - password validation (min length 6 char)
 - price validation
 - remove product image on delete
-- secure new/edit/delete for admin only
