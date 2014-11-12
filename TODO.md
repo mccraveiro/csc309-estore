@@ -1,12 +1,12 @@
 - create account (Anderson)
+- add item to shopping cart (Mateus)
+- shopping cart view
+  - edit quantity
+  - delete items
 - admin dashboard
   - view orders
   - delete customer
   - delete order
-- add item to shopping cart
-- shopping cart view
-  - edit quantity
-  - delete items
 - checkout (get payment information)
 - show receipt
 - email receipt
