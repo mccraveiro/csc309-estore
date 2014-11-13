@@ -16,15 +16,35 @@ class Cart_Ctrl extends CI_Controller {
     $this->load->model('product_model');
     $product = $this->product_model->get($id);
 
-    $this->cart->insertOrUpdate(array(
-      'id'    => $product->id,
-      'qty'   => 1,
-      'price' => $product->price,
-      'name'  => $product->name
-    ));
+    if ($this->input->post('qty') !== false) {
+      $this->load->library('form_validation');
+      $this->form_validation->set_rules('qty', 'Quantity', 'required|integer');
 
-    $total_items = $this->cart->total_items();
-    $this->output->set_output($total_items);
+      if (!$this->form_validation->run()) {
+        redirect('/product/'.$id);
+      }
+
+      $qty = $this->input->post('qty');
+      $this->cart->insertOrUpdate(array(
+        'id'    => $product->id,
+        'qty'   => $qty,
+        'price' => $product->price,
+        'name'  => $product->name
+      ));
+
+      redirect('/cart');
+    } else {
+      $qty = $this->input->post('qty');
+      $this->cart->insertOrUpdate(array(
+        'id'    => $product->id,
+        'qty'   => 1,
+        'price' => $product->price,
+        'name'  => $product->name
+      ));
+
+      $total_items = $this->cart->total_items();
+      $this->output->set_output($total_items);
+    }
   }
 
   function update_item_qty($rowid) {

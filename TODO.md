@@ -1,4 +1,4 @@
-- fix add to cart button on product view (Mateus)
+- add link on the product image to product view (Mateus)
 - create account (Anderson)
 - admin dashboard
   - view orders
@@ -10,7 +10,7 @@
 - checkout (get payment information)
 - show receipt
 - email receipt
-- add link on the product image to product view
 - add notification for actions
   - notification when added to cart
 - fix login and signup navbars
+- show message if shopping cart is empty

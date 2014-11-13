@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>eStore</title>
     <link href="/css/bootstrap.min.css" rel="stylesheet">
-    <link href="/css/login.css" rel="stylesheet">
   </head>
   <body>
     <?php $this->load->view('navbar.php'); ?>
@@ -34,11 +33,11 @@
               </div>
             <?php } else { ?>
               <div class="well">
-                <form class="form-horizontal" role="form">
+                <?= form_open('cart/add/'.$product->id, array('class' => 'form-horizontal', 'role' => 'form')) ?>
                   <div class="form-group">
                     <label for="inputQuantity" class="col-sm-6 control-label">Quantity</label>
                     <div class="col-sm-6">
-                      <select class="form-control" id="inputQuantity">
+                      <select class="form-control" id="inputQuantity" name="qty">
                         <option>1</option>
                         <option>2</option>
                         <option>3</option>
@@ -49,11 +48,10 @@
                   </div>
                   <div class="form-group">
                     <div class="col-sm-12">
-                      <!-- <button type="submit" class="btn btn-default">Sign in</button> -->
-                      <?= anchor('product/'.$product->id, 'Add to cart', array('class' => 'btn btn-primary btn-block', 'role' => 'button')); ?>
+                      <button type="submit" class="btn btn-primary btn-block">Add to cart</button>
                     </div>
                   </div>
-                </form>
+                <?= form_close() ?>
               </div>
             <?php
               }
