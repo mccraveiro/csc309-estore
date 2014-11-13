@@ -1,4 +1,3 @@
-- fix login and signup navbars (Mateus)
 - create account (Anderson)
 - admin dashboard
   - view orders

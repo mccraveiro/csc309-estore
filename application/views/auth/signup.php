@@ -9,14 +9,7 @@
     <link href="/css/login.css" rel="stylesheet">
   </head>
   <body>
-    <nav class="navbar navbar-default" role="navigation">
-      <div class="container-fluid">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
-          <?php echo anchor('store', 'eStore', array('class' => 'navbar-brand')); ?>
-        </div>
-      </div><!-- /.container-fluid -->
-    </nav>
+    <?php $this->load->view('navbar.php'); ?>
     <div class="container-fluid">
       <div class="row login-title">
         <div class="col-xs-4 col-xs-offset-4">
@@ -30,7 +23,7 @@
       <div class="row">
         <div class="col-xs-4 col-xs-offset-4">
           <?php echo form_open('auth', array('class' => 'form-horizontal', 'role' => 'form')); ?>
-            
+
             <div class="form-group">
               <label for="FirstName" class="col-sm-2 control-label">First Name</label>
               <div class="col-sm-10">
