@@ -3,13 +3,14 @@
   - view orders
   - delete customer
   - delete order
-- add item to shopping cart
-- shopping cart view
-  - edit quantity
-  - delete items
-- checkout (get payment information)
-- show receipt
-- email receipt
 - password validation (min length 6 char)
 - price validation
 - remove product image on delete
+- fix add to cart button on product view
+- checkout (get payment information)
+- show receipt
+- email receipt
+- add link on the product image to product view
+- add notification for actions
+  - notification when added to cart
+- fix login and signup navbars

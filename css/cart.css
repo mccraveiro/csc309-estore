@@ -1,0 +1,25 @@
+.cart-table-header,
+.cart-table-footer {
+  font-weight: bold;
+}
+
+.cart-table-footer {
+  margin-bottom: 120px;
+  margin-top: 40px;
+  font-size: 1.5em !important;
+  letter-spacing: 0.05em;
+  word-spacing: 0.5em;
+}
+
+.cart-table-header-separator hr {
+  border-top: 1px solid gray !important;
+  margin-top: 5px !important;
+}
+
+.quantity-update-input {
+  width: 70px !important;
+  margin-right: auto;
+  margin-left: auto;
+  text-align: center;
+}
+
