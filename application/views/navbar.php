@@ -12,15 +12,20 @@
     </div>
     <div class="collapse navbar-collapse" id="main-nav">
       <ul class="nav navbar-nav navbar-right">
-        <li>
-          <?php
-            if (is_logged()) {
-              echo anchor('logout', 'Log out');
-            } else {
-              echo anchor('auth', 'Log in');
-            }
-          ?>
-        </li>
+        <?php
+          if (is_logged()) {
+            echo '<li>';
+            echo anchor('logout', 'Log out');
+            echo '</li>';
+          } else {
+            echo '<li>';
+            echo anchor('auth', 'Log in');
+            echo '</li>';
+            echo '<li>';
+            echo anchor('signup', 'Sign up');
+            echo '</li>';
+          }
+        ?>
       </ul>
     </div>
   </div><!-- /.container-fluid -->

@@ -41,6 +41,7 @@
 $route['default_controller'] = 'store_ctrl';
 
 $route['auth'] = 'auth_ctrl';
+$route['signup'] = 'auth_ctrl/signup';
 $route['logout'] = 'auth_ctrl/logout';
 
 $route['product/(:num)'] = 'product_ctrl/view/$1';
