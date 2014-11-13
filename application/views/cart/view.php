@@ -39,7 +39,7 @@
             <?= $item['name'] ?>
           </div>
           <div class="col-sm-2 text-center">
-            $<?=  money_format('%.2n', $item['price']) ?>
+            $ <?=  money_format('%.2n', $item['price']) ?>
           </div>
           <?= form_open('/cart/update/'.$item['rowid'], array('class' => 'form-inline', 'role' => 'form')); ?>
             <div class="col-sm-2 text-center">

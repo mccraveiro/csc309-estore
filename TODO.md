@@ -1,4 +1,4 @@
-- add link on the product image to product view (Mateus)
+- show message if shopping cart is empty (Mateus)
 - create account (Anderson)
 - admin dashboard
   - view orders
@@ -13,4 +13,3 @@
 - add notification for actions
   - notification when added to cart
 - fix login and signup navbars
-- show message if shopping cart is empty

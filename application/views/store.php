@@ -29,7 +29,9 @@
           <?php foreach ($products as $product) { ?>
             <div class="col-xs-12 col-sm-4 col-lg-3">
               <div class="thumbnail">
-                <img src="<?= base_url() ?>images/product/<?= $product->photo_url ?>" alt="<?= $product->name ?>">
+                <a href="product/<?= $product->id ?>">
+                  <img src="<?= base_url() ?>images/product/<?= $product->photo_url ?>" alt="<?= $product->name ?>">
+                </a>
                 <div class="caption">
                   <h3><?= $product->name ?></h3>
                   <h5>$ <?=  money_format('%.2n', $product->price) ?></h5>
