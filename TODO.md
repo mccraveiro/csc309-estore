@@ -1,3 +1,4 @@
+- fix add to cart button on product view (Mateus)
 - create account (Anderson)
 - admin dashboard
   - view orders
@@ -6,7 +7,6 @@
 - password validation (min length 6 char)
 - price validation
 - remove product image on delete
-- fix add to cart button on product view
 - checkout (get payment information)
 - show receipt
 - email receipt
