@@ -1,5 +1,4 @@
 - create account (Anderson)
-- edit shopping cart quantity
 - admin dashboard
   - view orders
   - delete customer

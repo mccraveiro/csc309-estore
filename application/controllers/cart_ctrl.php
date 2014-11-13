@@ -27,6 +27,21 @@ class Cart_Ctrl extends CI_Controller {
     $this->output->set_output($total_items);
   }
 
+  function update_item_qty($rowid) {
+    $this->load->library('form_validation');
+    $this->form_validation->set_rules('qty', 'Quantity', 'required|integer');
+
+    if ($this->form_validation->run() !== false) {
+      $qty = $this->input->post('qty');
+      $this->cart->update(array(
+        'rowid' => $rowid,
+        'qty'   => $qty
+      ));
+    }
+
+    redirect('cart');
+  }
+
   function delete($rowid) {
     $this->cart->update(array(
       'rowid' => $rowid,

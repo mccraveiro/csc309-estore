@@ -18,5 +18,8 @@
 
 .quantity-update-input {
   width: 70px !important;
+  margin-right: auto;
+  margin-left: auto;
+  text-align: center;
 }
 
