@@ -26,6 +26,15 @@ class Cart_Ctrl extends CI_Controller {
     $total_items = $this->cart->total_items();
     $this->output->set_output($total_items);
   }
+
+  function delete($rowid) {
+    $this->cart->update(array(
+      'rowid' => $rowid,
+      'qty'   => 0
+    ));
+
+    redirect('cart');
+  }
 }
 
 ?>

@@ -1,6 +1,5 @@
 - create account (Anderson)
 - edit shopping cart quantity
-- delete shopping cart items
 - admin dashboard
   - view orders
   - delete customer
@@ -15,3 +14,4 @@
 - add link on the product image to product view
 - add notification for actions
   - notification when added to cart
+- fix login and signup navbars

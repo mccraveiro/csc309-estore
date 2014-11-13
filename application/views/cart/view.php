@@ -18,13 +18,13 @@
       </div>
       <br>
       <div class="row cart-table-header">
-        <div class="col-sm-5 col-sm-offset-1">
+        <div class="col-sm-4 col-sm-offset-1">
           Card
         </div>
         <div class="col-sm-2 text-center">
           Price
         </div>
-        <div class="col-sm-3 text-right">
+        <div class="col-sm-3 text-center">
           Quantity
         </div>
       </div>
@@ -35,19 +35,24 @@
       </div>
       <?php foreach ($cart_contents as $item) { ?>
         <div class="row cart-table-item">
-          <div class="col-sm-5 col-sm-offset-1">
+          <div class="col-sm-4 col-sm-offset-1">
             <?= $item['name'] ?>
           </div>
           <div class="col-sm-2 text-center">
-            $ <?=  money_format('%.2n', $item['price']) ?>
+            $<?=  money_format('%.2n', $item['price']) ?>
           </div>
-          <div class="col-sm-3 text-right">
+          <div class="col-sm-3 text-center">
             <form class="form-inline" role="form">
               <div class="form-group">
                 <input type="text" class="form-control quantity-update-input" name="qty" value="<?= $item['qty'] ?>" placeholder="0" />
               </div>
               <button type="submit" class="btn btn-default">Update</button>
             </form>
+          </div>
+          <div class="col-sm-1 text-right">
+            <a href="/cart/delete/<?= $item['rowid'] ?>" class="btn btn-danger" role="button">
+              <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+            </a>
           </div>
         </div>
         <div class="row cart-table-separator">
@@ -57,11 +62,8 @@
         </div>
       <?php } ?>
       <div class="row cart-table-footer">
-        <div class="col-sm-1 col-sm-offset-7 text-right">
-          Total:
-        </div>
-        <div class="col-sm-2 text-right">
-          $ <?= money_format('%.2n', $cart_total) ?>
+        <div class="col-sm-10 col-sm-offset-1 text-center">
+          Total $<?= money_format('%.2n', $cart_total) ?>
         </div>
       </div>
       <div class="row">
