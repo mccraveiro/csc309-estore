@@ -1,4 +1,4 @@
-- show message if shopping cart is empty (Mateus)
+- fix login and signup navbars (Mateus)
 - create account (Anderson)
 - admin dashboard
   - view orders
@@ -12,4 +12,3 @@
 - email receipt
 - add notification for actions
   - notification when added to cart
-- fix login and signup navbars

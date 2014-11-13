@@ -17,57 +17,69 @@
         </div>
       </div>
       <br>
-      <div class="row cart-table-header">
-        <div class="col-sm-4 col-sm-offset-1">
-          Card
-        </div>
-        <div class="col-sm-2 text-center">
-          Price
-        </div>
-        <div class="col-sm-2 text-center">
-          Quantity
-        </div>
-      </div>
-      <div class="row cart-table-header-separator">
-        <div class="col-sm-10 col-sm-offset-1">
-          <hr>
-        </div>
-      </div>
-      <?php foreach ($cart_contents as $item) { ?>
-        <div class="row cart-table-item">
+      <?php if (!cart_is_empty()) { ?>
+        <div class="row cart-table-header">
           <div class="col-sm-4 col-sm-offset-1">
-            <?= $item['name'] ?>
+            Card
           </div>
           <div class="col-sm-2 text-center">
-            $ <?=  money_format('%.2n', $item['price']) ?>
+            Price
           </div>
-          <?= form_open('/cart/update/'.$item['rowid'], array('class' => 'form-inline', 'role' => 'form')); ?>
-            <div class="col-sm-2 text-center">
-              <input type="text" class="form-control quantity-update-input" name="qty" value="<?= $item['qty'] ?>" placeholder="0" />
-            </div>
-            <div class="col-sm-2 text-right">
-              <button type="submit" class="btn btn-default">Update</button>
-              <a href="/cart/delete/<?= $item['rowid'] ?>" class="btn btn-danger" role="button">
-                <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
-              </a>
-            </div>
-          <?= form_close() ?>
+          <div class="col-sm-2 text-center">
+            Quantity
+          </div>
         </div>
-        <div class="row cart-table-separator">
+        <div class="row cart-table-header-separator">
           <div class="col-sm-10 col-sm-offset-1">
             <hr>
           </div>
         </div>
-      <?php } ?>
-      <div class="row cart-table-footer">
-        <div class="col-sm-10 col-sm-offset-1 text-center">
-          Total $<?= money_format('%.2n', $cart_total) ?>
+        <?php foreach ($cart_contents as $item) { ?>
+          <div class="row cart-table-item">
+            <div class="col-sm-4 col-sm-offset-1">
+              <?= $item['name'] ?>
+            </div>
+            <div class="col-sm-2 text-center">
+              $ <?=  money_format('%.2n', $item['price']) ?>
+            </div>
+            <?= form_open('/cart/update/'.$item['rowid'], array('class' => 'form-inline', 'role' => 'form')); ?>
+              <div class="col-sm-2 text-center">
+                <input type="text" class="form-control quantity-update-input" name="qty" value="<?= $item['qty'] ?>" placeholder="0" />
+              </div>
+              <div class="col-sm-2 text-right">
+                <button type="submit" class="btn btn-default">Update</button>
+                <a href="/cart/delete/<?= $item['rowid'] ?>" class="btn btn-danger" role="button">
+                  <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                </a>
+              </div>
+            <?= form_close() ?>
+          </div>
+          <div class="row cart-table-separator">
+            <div class="col-sm-10 col-sm-offset-1">
+              <hr>
+            </div>
+          </div>
+        <?php } ?>
+        <div class="row cart-table-footer">
+          <div class="col-sm-10 col-sm-offset-1 text-center">
+            Total $<?= money_format('%.2n', $cart_total) ?>
+          </div>
         </div>
-      </div>
+      <?php } else { ?>
+        <div class="row">
+          <div class="col-sm-10 col-sm-offset-1 text-center">
+            <p class="cart-empty-message lead text-muted">Your shopping cart is empty.</p>
+          </div>
+        </div>
+      <?php } ?>
       <div class="row">
         <div class="col-sm-10 col-sm-offset-1 text-center">
           <?= anchor('/', 'Continue Shopping', array('class' => 'btn btn-default', 'role' => 'button')) ?>
-          <?= anchor('/', 'Checkout', array('class' => 'btn btn-success', 'role' => 'button')) ?>
+          <?php
+            if(!cart_is_empty()) {
+              echo anchor('/', 'Checkout', array('class' => 'btn btn-success', 'role' => 'button'));
+            }
+          ?>
         </div>
       </div>
     </div>
