@@ -29,17 +29,9 @@ class Auth_Ctrl extends CI_Controller {
       $customer->login = $login;
       $customer->password = $password;
 
-      $result = $customer->verify_user();
+      $result = $customer->auth();
 
       if ($result !== false) {
-        $this->session->set_userdata(array(
-          'id'    => $result->id,
-          'first' => $result->first,
-          'last'  => $result->last,
-          'login' => $result->login,
-          'email' => $result->email
-        ));
-
         redirect('/');
       }
     }

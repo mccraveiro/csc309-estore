@@ -28,8 +28,7 @@ Class Customer extends CI_Model {
     ));
   }
 
-  function verify_user() {
-
+  function auth() {
     $this->db->from('customers');
     $this->db->where('login', $this->login);
     $this->db->where('password', $this->password);
@@ -38,7 +37,17 @@ Class Customer extends CI_Model {
     $query = $this->db->get();
 
     if ($query->num_rows() == 1) {
-      return $query->row();
+      $result = $query->row();
+
+      $this->id    = $result->id;
+      $this->first = $result->first;
+      $this->last  = $result->last;
+      $this->email = $result->email;
+      $this->login = $result->login;
+
+      $this->create_session();
+
+      return true;
     }
 
     return false;
