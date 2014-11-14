@@ -1,4 +1,5 @@
-- create account (Anderson)
+= rename verify user
+- verify user should populate customer
 - admin dashboard
   - view orders
   - delete customer

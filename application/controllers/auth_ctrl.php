@@ -25,7 +25,11 @@ class Auth_Ctrl extends CI_Controller {
       }
 
       $this->load->model('customer');
-      $result = $this->customer->verify_user($login, $password);
+      $customer = new $this->customer();
+      $customer->login = $login;
+      $customer->password = $password;
+
+      $result = $customer->verify_user();
 
       if ($result !== false) {
         $this->session->set_userdata(array(
@@ -45,36 +49,39 @@ class Auth_Ctrl extends CI_Controller {
 
   function signup() {
     $this->load->library('form_validation');
-    $this->form_validation->set_rules('login', 'Login', 'required|min_length[3]|max_length[16]');
-    $this->form_validation->set_rules('password', 'Password', 'required|min_length[5]|max_length[16]');
+    $this->form_validation->set_rules('first', 'First Name', 'trim|required|max_length[24]');
+    $this->form_validation->set_rules('last', 'Last Name', 'trim|required|max_length[24]');
+    $this->form_validation->set_rules('email', 'Email', 'trim|required|max_length[45]|valid_email|is_unique[customers.email]');
+    $this->form_validation->set_rules('login', 'Login', 'trim|required|min_length[3]|max_length[16]|[customers.login]');
+    $this->form_validation->set_rules('password', 'Password', 'required|min_length[6]|max_length[16]|matches[repeatpassword]');
+    $this->form_validation->set_rules('repeatpassword', 'Repeat Password', 'required|min_length[6]|max_length[16]');
 
     if ($this->form_validation->run() !== false) {
-      $login    = $this->input->post('login');
-      $password = $this->input->post('password');
+      $first          = $this->input->post('first');
+      $last           = $this->input->post('last');
+      $email          = $this->input->post('email');
+      $login          = $this->input->post('login');
+      $password       = $this->input->post('password');
+      $repeatpassword = $this->input->post('repeatpassword');
 
-      if ($login == 'admin' && $password == 'admin') {
-        $this->session->set_userdata(array(
-          'admin' => true,
-          'login' => 'admin'
-        ));
-
-        redirect('/');
+      if ($login == 'admin') {
+        $this->form_validation->set_message('rule', 'Login cannot be "admin"');
+        $this->load->view('auth/signup');
+        return;
       }
 
       $this->load->model('customer');
-      $result = $this->customer->verify_user($login, $password);
+      $customer = new $this->customer();
+      $customer->first    = $first;
+      $customer->last     = $last;
+      $customer->email    = $email;
+      $customer->login    = $login;
+      $customer->password = $password;
 
-      if ($result !== false) {
-        $this->session->set_userdata(array(
-          'id'    => $result->id,
-          'first' => $result->first,
-          'last'  => $result->last,
-          'login' => $result->login,
-          'email' => $result->email
-        ));
+      $customer->save();
+      $customer->create_session();
 
-        redirect('/');
-      }
+      redirect('/');
     }
 
     $this->load->view('auth/signup');

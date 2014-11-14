@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Login</title>
+    <title>Signup</title>
     <link href="/css/bootstrap.min.css" rel="stylesheet">
     <link href="/css/login.css" rel="stylesheet">
   </head>
@@ -12,63 +12,59 @@
     <?php $this->load->view('navbar.php'); ?>
     <div class="container-fluid">
       <div class="row login-title">
-        <div class="col-xs-4 col-xs-offset-4">
+        <div class="col-xs-7 col-xs-offset-2">
           <div class="row">
-            <div class="col-sm-offset-2 col-sm-10">
+            <div class="col-sm-offset-4 col-sm-8">
               <h1>Sign up</h1>
             </div>
           </div>
         </div>
       </div>
       <div class="row">
-        <div class="col-xs-4 col-xs-offset-4">
-          <?php echo form_open('auth', array('class' => 'form-horizontal', 'role' => 'form')); ?>
-
+        <div class="col-xs-7 col-xs-offset-2">
+          <?php echo form_open('signup', array('class' => 'form-horizontal', 'role' => 'form')); ?>
             <div class="form-group">
-              <label for="FirstName" class="col-sm-2 control-label">First Name</label>
-              <div class="col-sm-10">
+              <label for="inputFirstName" class="col-sm-4 control-label">First Name</label>
+              <div class="col-sm-8">
                 <?php echo form_input(array(
-                  'name' => 'FirstName',
-                  'value' => set_value('FirstName'),
+                  'name' => 'first',
+                  'value' => set_value('first'),
                   'class' => 'form-control',
-                  'id' => 'FirstName',
+                  'id' => 'inputFirstName',
                   'placeholder' => 'First Name',
                   'maxlength' => '24'
                 )); ?>
               </div>
             </div>
-
             <div class="form-group">
-              <label for="LastName" class="col-sm-2 control-label">Last Name</label>
-              <div class="col-sm-10">
+              <label for="inputLastName" class="col-sm-4 control-label">Last Name</label>
+              <div class="col-sm-8">
                 <?php echo form_input(array(
-                  'name' => 'LastName',
-                  'value' => set_value('LastName'),
+                  'name' => 'last',
+                  'value' => set_value('last'),
                   'class' => 'form-control',
-                  'id' => 'LastName',
+                  'id' => 'inputLastName',
                   'placeholder' => 'Last Name',
                   'maxlength' => '24'
                 )); ?>
               </div>
             </div>
-
             <div class="form-group">
-              <label for="Email" class="col-sm-2 control-label">Email</label>
-              <div class="col-sm-10">
+              <label for="inputEmail" class="col-sm-4 control-label">Email</label>
+              <div class="col-sm-8">
                 <?php echo form_input(array(
-                  'name' => 'Email',
-                  'value' => set_value('Email'),
-                  'class' => 'Email',
-                  'id' => 'Email',
+                  'name' => 'email',
+                  'value' => set_value('email'),
+                  'class' => 'form-control',
+                  'id' => 'inputEmail',
                   'placeholder' => 'Email',
                   'maxlength' => '45'
                 )); ?>
               </div>
             </div>
-
             <div class="form-group">
-              <label for="inputLogin" class="col-sm-2 control-label">Login</label>
-              <div class="col-sm-10">
+              <label for="inputLogin" class="col-sm-4 control-label">Login</label>
+              <div class="col-sm-8">
                 <?php echo form_input(array(
                   'name' => 'login',
                   'value' => set_value('login'),
@@ -80,8 +76,8 @@
               </div>
             </div>
             <div class="form-group">
-              <label for="inputPassword" class="col-sm-2 control-label">Password</label>
-              <div class="col-sm-10">
+              <label for="inputPassword" class="col-sm-4 control-label">Password</label>
+              <div class="col-sm-8">
                 <?php echo form_password(array(
                   'name' => 'password',
                   'value' => '',
@@ -91,23 +87,22 @@
                   'maxlength' => '16'
                 )); ?>
               </div>
-              </br></br></br>
-              <div class="form-group">
-              <label for="RepeatPassword" class="col-sm-2 control-label">Repeat Password</label>
-              <div class="col-sm-10">
+            </div>
+            <div class="form-group">
+              <label for="inputRepeatPassword" class="col-sm-4 control-label">Repeat Password</label>
+              <div class="col-sm-8">
                 <?php echo form_password(array(
-                  'name' => 'Repeatpassword',
+                  'name' => 'repeatpassword',
                   'value' => '',
                   'class' => 'form-control',
-                  'id' => 'RepeatPassword',
+                  'id' => 'inputRepeatPassword',
                   'placeholder' => 'Repeat Password',
                   'maxlength' => '16'
                 )); ?>
               </div>
-
             </div>
             <div class="form-group">
-              <div class="col-sm-offset-2 col-sm-10">
+              <div class="col-sm-offset-4 col-sm-8">
                 <?php echo form_submit(array(
                   'name' => 'signup',
                   'value' => 'Sign up',
@@ -120,9 +115,9 @@
       </div>
       <?php if (validation_errors() !== '') { ?>
         <div class="row login-title">
-          <div class="col-xs-4 col-xs-offset-4">
+          <div class="col-xs-7 col-xs-offset-2">
             <div class="row">
-              <div class="col-sm-offset-2 col-sm-10">
+              <div class="col-sm-offset-4 col-sm-8">
                 <div class="alert alert-danger" role="alert"><?php echo validation_errors(); ?></div>
               </div>
             </div>

@@ -14,7 +14,7 @@
       <div class="row login-title">
         <div class="col-xs-4 col-xs-offset-4">
           <div class="row">
-            <div class="col-sm-offset-2 col-sm-10">
+            <div class="col-sm-offset-4 col-sm-8">
               <h1>Login</h1>
             </div>
           </div>
@@ -24,8 +24,8 @@
         <div class="col-xs-4 col-xs-offset-4">
           <?php echo form_open('auth', array('class' => 'form-horizontal', 'role' => 'form')); ?>
             <div class="form-group">
-              <label for="inputLogin" class="col-sm-2 control-label">Login</label>
-              <div class="col-sm-10">
+              <label for="inputLogin" class="col-sm-4 control-label">Login</label>
+              <div class="col-sm-8">
                 <?php echo form_input(array(
                   'name' => 'login',
                   'value' => set_value('login'),
@@ -37,8 +37,8 @@
               </div>
             </div>
             <div class="form-group">
-              <label for="inputPassword" class="col-sm-2 control-label">Password</label>
-              <div class="col-sm-10">
+              <label for="inputPassword" class="col-sm-4 control-label">Password</label>
+              <div class="col-sm-8">
                 <?php echo form_password(array(
                   'name' => 'password',
                   'value' => '',
@@ -50,7 +50,7 @@
               </div>
             </div>
             <div class="form-group">
-              <div class="col-sm-offset-2 col-sm-10">
+              <div class="col-sm-offset-4 col-sm-8">
                 <?php echo form_submit(array(
                   'name' => 'signin',
                   'value' => 'Sign in',
@@ -65,7 +65,7 @@
         <div class="row login-title">
           <div class="col-xs-4 col-xs-offset-4">
             <div class="row">
-              <div class="col-sm-offset-2 col-sm-10">
+              <div class="col-sm-offset-4 col-sm-8">
                 <div class="alert alert-danger" role="alert"><?php echo validation_errors(); ?></div>
               </div>
             </div>
