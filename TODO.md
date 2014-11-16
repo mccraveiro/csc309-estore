@@ -1,12 +1,12 @@
+- show receipt
+- email receipt
 - admin dashboard
   - view orders
   - delete customer
   - delete order
-- password validation (min length 6 char)
-- price validation
-- remove product image on delete
-- checkout (get payment information)
-- show receipt
-- email receipt
 - add notification for actions
   - notification when added to cart
+- price validation
+- remove product image on delete
+- rename login to signin
+- validate credit card expiration date

@@ -19,3 +19,12 @@ if (!function_exists('is_logged')) {
     return (isset($session['login']));
   }
 }
+
+if (!function_exists('get_customer_id')) {
+  function get_customer_id() {
+    $CI =& get_instance();
+    $CI->load->library('session');
+
+    return $CI->session->userdata('id');
+  }
+}

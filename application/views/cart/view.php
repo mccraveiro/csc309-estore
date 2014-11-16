@@ -48,7 +48,7 @@
               </div>
               <div class="col-sm-2 text-right">
                 <button type="submit" class="btn btn-default">Update</button>
-                <a href="/cart/delete/<?= $item['rowid'] ?>" class="btn btn-danger" role="button">
+                <a href="<?= site_url('/cart/delete/'. $item['rowid']) ?>" class="btn btn-danger" role="button">
                   <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
                 </a>
               </div>
@@ -77,7 +77,7 @@
           <?= anchor('/', 'Continue Shopping', array('class' => 'btn btn-default', 'role' => 'button')) ?>
           <?php
             if(!cart_is_empty()) {
-              echo anchor('/', 'Checkout', array('class' => 'btn btn-success', 'role' => 'button'));
+              echo anchor('/checkout', 'Checkout', array('class' => 'btn btn-success', 'role' => 'button'));
             }
           ?>
         </div>

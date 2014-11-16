@@ -9,6 +9,7 @@ class Auth_Ctrl extends CI_Controller {
   function index() {
     $this->load->library('form_validation');
     $this->form_validation->set_rules('login', 'Login', 'required|min_length[3]|max_length[16]');
+    // cannot validate password as min_length[6] because of 'admin'
     $this->form_validation->set_rules('password', 'Password', 'required|min_length[5]|max_length[16]');
 
     if ($this->form_validation->run() !== false) {
@@ -32,7 +33,7 @@ class Auth_Ctrl extends CI_Controller {
       $result = $customer->auth();
 
       if ($result !== false) {
-        redirect('/');
+        $this->redirect();
       }
     }
 
@@ -73,7 +74,7 @@ class Auth_Ctrl extends CI_Controller {
       $customer->save();
       $customer->create_session();
 
-      redirect('/');
+      $this->redirect();
     }
 
     $this->load->view('auth/signup');
@@ -82,6 +83,14 @@ class Auth_Ctrl extends CI_Controller {
   function logout() {
     $this->session->sess_destroy();
     redirect('/');
+  }
+
+  private function redirect() {
+    if ($this->input->get('redirect') !== false) {
+      redirect($this->input->get('redirect'));
+    } else {
+      redirect('/');
+    }
   }
 }
 

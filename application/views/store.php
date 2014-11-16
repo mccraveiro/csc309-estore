@@ -29,7 +29,7 @@
           <?php foreach ($products as $product) { ?>
             <div class="col-xs-12 col-sm-4 col-lg-3">
               <div class="thumbnail">
-                <a href="product/<?= $product->id ?>">
+                <a href="<?= site_url('product/'.$product->id) ?>">
                   <img src="<?= base_url() ?>images/product/<?= $product->photo_url ?>" alt="<?= $product->name ?>">
                 </a>
                 <div class="caption">

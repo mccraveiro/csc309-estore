@@ -54,6 +54,9 @@ $route['cart/add/(:num)'] = 'cart_ctrl/add/$1';
 $route['cart/update/(:any)'] = 'cart_ctrl/update_item_qty/$1';
 $route['cart/delete/(:any)'] = 'cart_ctrl/delete/$1';
 
+$route['checkout'] = 'checkout_ctrl';
+$route['checkout/review'] = 'checkout_ctrl/review';
+
 $route['404_override'] = '';
 
 /* End of file routes.php */

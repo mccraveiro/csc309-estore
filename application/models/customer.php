@@ -9,8 +9,8 @@ Class Customer extends CI_Model {
   var $login = '';
   var $password = '';
 
-  function __construct() {
-
+  public function __construct() {
+    parent::__construct();
   }
 
   function save() {

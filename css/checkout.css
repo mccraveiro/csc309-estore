@@ -1,0 +1,38 @@
+.checkout-header {
+  margin-bottom: 70px;
+}
+
+.back-button {
+  margin-top: 120px;
+}
+
+.cart-table-header,
+.cart-table-footer {
+  font-weight: bold;
+}
+
+.cart-table-footer {
+  margin-bottom: 10px;
+  margin-top: 10px;
+  font-size: 1.3em !important;
+  letter-spacing: 0.05em;
+  word-spacing: 0.5em;
+}
+
+.cart-table-header-separator hr {
+  border-top: 1px solid gray !important;
+  margin-top: 5px !important;
+}
+
+.cart-table-separator hr {
+  border-top: 1px solid lightgray !important;
+}
+
+.payment-information-title {
+  margin-bottom: 20px;
+}
+
+.action-buttons {
+  margin-top: 40px;
+  margin-bottom: 60px;
+}

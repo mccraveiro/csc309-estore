@@ -22,7 +22,10 @@
       </div>
       <div class="row">
         <div class="col-xs-4 col-xs-offset-4">
-          <?php echo form_open('auth', array('class' => 'form-horizontal', 'role' => 'form')); ?>
+          <?php
+            $action = $this->input->get('redirect') ? 'auth?redirect='.$this->input->get('redirect') : 'auth';
+            echo form_open($action, array('class' => 'form-horizontal', 'role' => 'form'));
+          ?>
             <div class="form-group">
               <label for="inputLogin" class="col-sm-4 control-label">Login</label>
               <div class="col-sm-8">
