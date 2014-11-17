@@ -1,4 +1,3 @@
-- show receipt
 - email receipt
 - admin dashboard
   - view orders
@@ -10,3 +9,4 @@
 - remove product image on delete
 - rename login to signin
 - validate credit card expiration date
+- improve receipt print styles
