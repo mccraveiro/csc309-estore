@@ -16,7 +16,10 @@
 
           if (is_admin()) {
             echo '<li>';
-            echo anchor('customers', 'Customers');
+            echo anchor('admin/customers', 'Customers');
+            echo '</li>';
+            echo '<li>';
+            echo anchor('admin/orders', 'Orders');
             echo '</li>';
           } else {
             echo '<li>';

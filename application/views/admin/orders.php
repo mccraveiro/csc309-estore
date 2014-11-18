@@ -13,7 +13,7 @@
     <div class="container-fluid">
       <div class="row">
         <div class="col-sm-10 col-sm-offset-1">
-          <h2>Customers</h2>
+          <h2>Orders</h2>
         </div>
       </div>
       <br>
@@ -23,17 +23,19 @@
             <thead>
               <tr>
                 <th>Name</th>
-                <th>Email</th>
+                <th class="text-center">Date</th>
+                <th class="text-center">Total</th>
                 <th></th>
               </tr>
             </thead>
             <tbody>
-              <?php foreach ($customers as $customer) { ?>
+              <?php foreach ($orders as $order) { ?>
                 <tr>
-                  <td><?= $customer->getName() ?></td>
-                  <td><?= $customer->email ?></td>
+                  <td><?= $order->getCustomerName() ?></td>
+                  <td class="text-center"><?= $order->order_date ?></td>
+                  <td class="text-center">$ <?= $order->getTotal() ?></td>
                   <td class="text-right">
-                    <a href="<?= site_url('/admin/customers/delete/'.$customer->id) ?>" class="btn btn-danger" role="button">
+                    <a href="<?= site_url('/admin/orders/delete/'.$order->id) ?>" class="btn btn-danger" role="button">
                       <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
                     </a>
                   </td>

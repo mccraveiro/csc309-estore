@@ -59,8 +59,10 @@ $route['checkout/review'] = 'checkout_ctrl/review';
 
 $route['receipt/(:num)'] = 'receipt_ctrl/index/$1';
 
-$route['customers'] = 'admin_ctrl/list_customers';
-$route['customers/delete/(:num)'] = 'admin_ctrl/delete_customer/$1';
+$route['admin/customers'] = 'admin_ctrl/list_customers';
+$route['admin/customers/delete/(:num)'] = 'admin_ctrl/delete_customer/$1';
+$route['admin/orders'] = 'admin_ctrl/list_orders';
+$route['admin/orders/delete/(:num)'] = 'admin_ctrl/delete_order/$1';
 
 $route['404_override'] = '';
 

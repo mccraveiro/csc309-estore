@@ -1,6 +1,5 @@
 - admin dashboard
   - view orders
-  - delete order
 - email receipt
 - add notification for actions
   - notification when added to cart

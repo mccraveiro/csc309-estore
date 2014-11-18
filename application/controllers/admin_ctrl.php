@@ -9,6 +9,8 @@ class Admin_Ctrl extends CI_Controller {
       redirect('/');
     }
 
+    $this->load->model('orders');
+    $this->load->model('order');
     $this->load->model('customers');
     $this->load->model('customer');
   }
@@ -20,6 +22,16 @@ class Admin_Ctrl extends CI_Controller {
 
   function delete_customer($id) {
     $this->customers->delete($id);
-    redirect('/customers');
+    redirect('/admin/customers');
+  }
+
+  function list_orders() {
+    $data['orders'] = $this->orders->getAll();
+    $this->load->view('admin/orders', $data);
+  }
+
+  function delete_order($id) {
+    $this->orders->delete($id);
+    redirect('/admin/orders');
   }
 }

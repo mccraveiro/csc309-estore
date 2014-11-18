@@ -19,6 +19,10 @@ Class Order extends CI_Model {
     }
   }
 
+  public function getTotal() {
+    return money_format('%.2n', $this->total);
+  }
+
   public function save() {
     $this->db->set($this);
     $this->db->set('order_date', 'NOW()', FALSE);
@@ -46,6 +50,20 @@ Class Order extends CI_Model {
     }
 
     return $items;
+  }
+
+  public function getCustomer() {
+    $this->load->model('customer');
+    $query = $this->db
+              ->from('customers')
+              ->where('id', $this->customer_id)
+              ->get();
+    return $query->row(0, 'customer');
+  }
+
+  public function getCustomerName() {
+    $customer = $this->getCustomer();
+    return $customer->getName();
   }
 
   protected function loadById($id) {
