@@ -35,6 +35,10 @@
                   <td class="text-center"><?= $order->order_date ?></td>
                   <td class="text-center">$ <?= $order->getTotal() ?></td>
                   <td class="text-right">
+                    <a href="<?= site_url('/receipt/'.$order->id) ?>" class="btn btn-default" role="button">
+                      <span class="glyphicon glyphicon-file" aria-hidden="true"></span>
+                      View Receipt
+                    </a>
                     <a href="<?= site_url('/admin/orders/delete/'.$order->id) ?>" class="btn btn-danger" role="button">
                       <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
                     </a>

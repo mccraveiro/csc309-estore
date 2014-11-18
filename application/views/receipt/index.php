@@ -84,7 +84,13 @@
       <div class="row action-buttons hidden-print">
         <div class="col-sm-10 col-sm-offset-1 text-center">
           <a href="javascript:window.print()" class="btn btn-default">Print Receipt</a>
-          <?= anchor('/', 'Continue shopping', array('class' => 'btn btn-success', 'role' => 'button')) ?>
+          <?php
+            if (is_admin()) {
+              echo anchor('/admin/orders', 'Back', array('class' => 'btn btn-success', 'role' => 'button'));
+            } else {
+              echo anchor('/', 'Continue shopping', array('class' => 'btn btn-success', 'role' => 'button'));
+            }
+          ?>
         </div>
       </div>
     </div>

@@ -1,5 +1,4 @@
-- admin dashboard
-  - view orders
+- show creditcard info on checkout review
 - email receipt
 - add notification for actions
   - notification when added to cart
