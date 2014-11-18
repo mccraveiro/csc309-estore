@@ -7,7 +7,11 @@ Class Customers extends CI_Model {
   }
 
   function getAll() {
-    $query = $this->db->get('customers');
+    $query = $this->db
+              ->from('customers')
+              ->order_by('last', 'asc')
+              ->get();
+
     return $query->result('Customer');
   }
 
