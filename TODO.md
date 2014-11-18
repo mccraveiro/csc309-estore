@@ -1,5 +1,3 @@
-- message when no customers
-- message when no orders
 - add view order list for customers
 - replace select->input for product quantity
 - remove product image on delete

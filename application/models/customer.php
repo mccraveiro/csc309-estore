@@ -19,17 +19,16 @@ Class Customer extends CI_Model {
 
   function save() {
     $this->db->insert('customers', $this);
+    $this->id = $this->db->insert_id();
   }
 
   function create_session() {
     $this->load->library('session');
-    $this->session->set_userdata(array(
-      'id'    => $this->id,
-      'first' => $this->first,
-      'last'  => $this->last,
-      'login' => $this->login,
-      'email' => $this->email
-    ));
+    $this->session->set_userdata('id',    $this->id);
+    $this->session->set_userdata('first', $this->first);
+    $this->session->set_userdata('last',  $this->last);
+    $this->session->set_userdata('login', $this->login);
+    $this->session->set_userdata('email', $this->email);
   }
 
   function auth() {

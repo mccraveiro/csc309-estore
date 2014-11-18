@@ -24,10 +24,11 @@ Class Order extends CI_Model {
   }
 
   public function save() {
-    $this->db->set($this);
-    $this->db->set('order_date', 'NOW()', FALSE);
-    $this->db->set('order_time', 'NOW()', FALSE);
-    $this->db->insert('orders');
+    $this->db
+      ->set($this)
+      ->set('order_date', 'NOW()', FALSE)
+      ->set('order_time', 'NOW()', FALSE)
+      ->insert('orders');
 
     $this->id = $this->db->insert_id();
   }

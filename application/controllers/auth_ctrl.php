@@ -17,10 +17,8 @@ class Auth_Ctrl extends CI_Controller {
       $password = $this->input->post('password');
 
       if ($login == 'admin' && $password == 'admin') {
-        $this->session->set_userdata(array(
-          'admin' => true,
-          'login' => 'admin'
-        ));
+        $this->session->set_userdata('admin', true);
+        $this->session->set_userdata('login', 'admin');
 
         redirect('/');
       }

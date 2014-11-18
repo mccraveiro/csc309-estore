@@ -17,32 +17,40 @@
         </div>
       </div>
       <br>
-      <div class="row">
-        <div class="col-sm-10 col-sm-offset-1">
-          <table class="table table-hover">
-            <thead>
-              <tr>
-                <th>Name</th>
-                <th>Email</th>
-                <th></th>
-              </tr>
-            </thead>
-            <tbody>
-              <?php foreach ($customers as $customer) { ?>
+      <?php if (count($customers) > 0) { ?>
+        <div class="row">
+          <div class="col-sm-10 col-sm-offset-1">
+            <table class="table table-hover">
+              <thead>
                 <tr>
-                  <td><?= $customer->getName() ?></td>
-                  <td><?= $customer->email ?></td>
-                  <td class="text-right">
-                    <a href="<?= site_url('/admin/customers/delete/'.$customer->id) ?>" class="btn btn-danger" role="button">
-                      <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
-                    </a>
-                  </td>
+                  <th>Name</th>
+                  <th>Email</th>
+                  <th></th>
                 </tr>
-              <?php } ?>
-            </tbody>
-          </table>
+              </thead>
+              <tbody>
+                <?php foreach ($customers as $customer) { ?>
+                  <tr>
+                    <td><?= $customer->getName() ?></td>
+                    <td><?= $customer->email ?></td>
+                    <td class="text-right">
+                      <a href="<?= site_url('/admin/customers/delete/'.$customer->id) ?>" class="btn btn-danger" role="button">
+                        <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                      </a>
+                    </td>
+                  </tr>
+                <?php } ?>
+              </tbody>
+            </table>
+          </div>
         </div>
-      </div>
+      <?php } else { ?>
+        <div class="row">
+          <div class="col-sm-10 col-sm-offset-1 text-center">
+            <p class="empty-message lead text-muted">You have no customers.</p>
+          </div>
+        </div>
+      <?php } ?>
     </div>
     <?php $this->load->view('scripts.php'); ?>
   </body>
