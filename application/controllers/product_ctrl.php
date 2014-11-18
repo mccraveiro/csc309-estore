@@ -28,7 +28,7 @@ class Product_Ctrl extends CI_Controller {
     $this->load->library('form_validation');
     $this->form_validation->set_rules('name', 'Name', 'required|max_length[45]');
     $this->form_validation->set_rules('description', 'Description', 'required');
-    $this->form_validation->set_rules('price', 'Price', 'required');
+    $this->form_validation->set_rules('price', 'Price', 'required|decimal');
 
     $this->load->model('product_model');
 
@@ -65,7 +65,7 @@ class Product_Ctrl extends CI_Controller {
     $this->load->library('form_validation');
     $this->form_validation->set_rules('name', 'Name', 'required|max_length[45]');
     $this->form_validation->set_rules('description', 'Description', 'required');
-    $this->form_validation->set_rules('price', 'Price', 'required');
+    $this->form_validation->set_rules('price', 'Price', 'required|decimal');
 
     $this->load->model('product_model');
 

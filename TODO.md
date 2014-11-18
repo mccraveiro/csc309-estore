@@ -1,9 +1,8 @@
-- price validation
-- remove product image on delete
 - validate credit card expiration date
 - improve receipt print styles
 - secure receipt view (admin or custumer who made the order)
 - message when no customers
 - add view order list for customers
-- email receipt
 - replace select->input for product quantity
+- remove product image on delete
+- email receipt
