@@ -33,7 +33,7 @@
             echo '</li>';
           } else {
             echo '<li>';
-            echo anchor('auth', 'Log in');
+            echo anchor('auth', 'Sign in');
             echo '</li>';
             echo '<li>';
             echo anchor('signup', 'Sign up');

@@ -1,6 +1,5 @@
 - price validation
 - remove product image on delete
-- rename login to signin
 - validate credit card expiration date
 - improve receipt print styles
 - secure receipt view (admin or custumer who made the order)
