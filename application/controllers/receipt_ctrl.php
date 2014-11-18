@@ -12,6 +12,10 @@ class Receipt_Ctrl extends CI_Controller {
 
     $order = new Order($id);
 
+    if (!is_admin() and ($order->customer_id != get_customer_id())) {
+      redirect('/');
+    }
+
     $data['order'] = $order;
     $this->load->view('receipt/index', $data);
   }

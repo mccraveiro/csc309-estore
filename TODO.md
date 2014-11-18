@@ -1,6 +1,5 @@
 - validate credit card expiration date
 - improve receipt print styles
-- secure receipt view (admin or custumer who made the order)
 - message when no customers
 - add view order list for customers
 - replace select->input for product quantity
