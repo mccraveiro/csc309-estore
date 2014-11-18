@@ -1,6 +1,3 @@
-- email receipt
-- add notification for actions
-  - notification when added to cart
 - price validation
 - remove product image on delete
 - rename login to signin
@@ -9,3 +6,5 @@
 - secure receipt view (admin or custumer who made the order)
 - message when no customers
 - add view order list for customers
+- email receipt
+- replace select->input for product quantity

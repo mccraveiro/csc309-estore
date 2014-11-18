@@ -41,7 +41,7 @@
                       if (is_admin()) {
                         echo anchor('product/edit/'.$product->id, 'Edit', array('class' => 'btn btn-primary', 'role' => 'button'));
                       } else {
-                        echo '<button class="btn btn-primary add-to-cart-btn" data-id="'.$product->id.'">Add to cart</button>';
+                        echo anchor('cart/add/'.$product->id, 'Add to cart', array('class' => 'btn btn-primary', 'role' => 'button'));
                       }
                     ?>
                     <?= anchor('product/'.$product->id, 'View details', array('class' => 'btn btn-default', 'role' => 'button')) ?>
@@ -55,6 +55,5 @@
     </div>
 
     <?php $this->load->view('scripts.php'); ?>
-    <script src="/js/store/store.js"></script>
   </body>
 </html>
