@@ -37,13 +37,7 @@
                   <div class="form-group">
                     <label for="inputQuantity" class="col-sm-6 control-label">Quantity</label>
                     <div class="col-sm-6">
-                      <select class="form-control" id="inputQuantity" name="qty">
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                        <option>5</option>
-                      </select>
+                      <input type="number" class="form-control" id="inputQuantity" name="qty" value="1">
                     </div>
                   </div>
                   <div class="form-group">
