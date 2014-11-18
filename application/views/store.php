@@ -35,7 +35,6 @@
                 <div class="caption">
                   <h3><?= $product->name ?></h3>
                   <h5>$ <?=  money_format('%.2n', $product->price) ?></h5>
-                  <p><?= $product->description ?></p>
                   <p>
                     <?php
                       if (is_admin()) {
