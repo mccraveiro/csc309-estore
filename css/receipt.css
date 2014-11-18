@@ -12,8 +12,8 @@
 }
 
 .cart-table-footer {
-  margin-bottom: 10px;
-  margin-top: 10px;
+  margin-bottom: 40px;
+  margin-top: 40px;
   font-size: 1.3em !important;
   letter-spacing: 0.05em;
   word-spacing: 0.5em;
@@ -28,7 +28,7 @@
   border-top: 1px solid lightgray !important;
 }
 
-.payment-information-title {
+.information-title {
   margin-bottom: 20px;
 }
 
