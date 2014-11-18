@@ -1,4 +1,3 @@
-- validate credit card expiration date
 - improve receipt print styles
 - message when no customers
 - add view order list for customers

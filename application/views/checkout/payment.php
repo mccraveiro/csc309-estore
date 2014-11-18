@@ -31,6 +31,13 @@
               </div>
             </div>
             <br><br>
+            <?php if (validation_errors() !== '') { ?>
+              <div class="row">
+                <div class="form-group col-xs-12 col-sm-7">
+                  <div class="alert alert-danger" role="alert"><?php echo validation_errors(); ?></div>
+                </div>
+              </div>
+            <?php } ?>
             <div class="row">
               <div class="form-group col-xs-12 col-sm-7">
                 <label class="control-label">Credit Card Number</label>
@@ -63,7 +70,6 @@
               <div class="form-group col-xs-4 col-sm-2">
                 <label class="control-label">Expiration Year</label>
                 <select class="form-control" name="creditcard_year" value="<?= set_value('creditcard_year') ?>">
-                  <option value="13">2013</option>
                   <option value="14">2014</option>
                   <option value="15">2015</option>
                   <option value="16">2016</option>
@@ -74,6 +80,7 @@
                   <option value="21">2021</option>
                   <option value="22">2022</option>
                   <option value="23">2023</option>
+                  <option value="24">2024</option>
                 </select>
               </div>
             </div>
@@ -93,17 +100,6 @@
           <?php echo form_close(); ?>
         </div>
       </div>
-      <?php if (validation_errors() !== '') { ?>
-        <div class="row">
-          <div class="col-sm-10 col-sm-offset-1">
-            <div class="row">
-              <div class="col-sm-offset-3 col-sm-5">
-                <div class="alert alert-danger" role="alert"><?php echo validation_errors(); ?></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      <?php } ?>
     </div>
     <?php $this->load->view('scripts.php'); ?>
     <script src="/js/jquery.maskedinput.js"></script>

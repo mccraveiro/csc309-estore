@@ -12,7 +12,7 @@ class Checkout_Ctrl extends CI_Controller {
       $this->load->library('form_validation');
       $this->form_validation->set_rules('creditcard_number', 'Credit Card Number', 'required|max_length[19]');
       $this->form_validation->set_rules('creditcard_month', 'Credit Card Expiration Month', 'required|max_length[2]');
-      $this->form_validation->set_rules('creditcard_year', 'Credit Card Expiration Year', 'required|max_length[4]');
+      $this->form_validation->set_rules('creditcard_year', 'Credit Card Expiration Year', 'required|max_length[4]|callback_credit_card_expiration['.$this->input->post('creditcard_month').']');
 
       if ($this->form_validation->run() !== false) {
         $creditcard_number = $this->input->post('creditcard_number');
@@ -39,6 +39,18 @@ class Checkout_Ctrl extends CI_Controller {
     } else {
       $this->load->view('checkout/index');
     }
+  }
+
+  function credit_card_expiration($creditcard_year, $creditcard_month) {
+    $this_year = date('y');
+    $this_month = date('m');
+
+    if ($creditcard_year < $this_year or ($creditcard_year == $this_year and $creditcard_month <= $this_month)) {
+      $this->form_validation->set_message('credit_card_expiration', 'This credit card is expired');
+      return FALSE;
+    }
+
+    return TRUE;
   }
 
   function review() {
