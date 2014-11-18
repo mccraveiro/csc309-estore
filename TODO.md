@@ -1,8 +1,7 @@
-- email receipt
 - admin dashboard
   - view orders
-  - delete customer
   - delete order
+- email receipt
 - add notification for actions
   - notification when added to cart
 - price validation
@@ -10,3 +9,5 @@
 - rename login to signin
 - validate credit card expiration date
 - improve receipt print styles
+- secure receipt view (admin or custumer who made the order)
+- message when no customers

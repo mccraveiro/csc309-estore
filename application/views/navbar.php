@@ -13,8 +13,12 @@
     <div class="collapse navbar-collapse" id="main-nav">
       <ul class="nav navbar-nav navbar-right">
         <?php
-        
-          if (!is_admin()) {
+
+          if (is_admin()) {
+            echo '<li>';
+            echo anchor('customers', 'Customers');
+            echo '</li>';
+          } else {
             echo '<li>';
             echo anchor('cart', 'Cart ('.cart_number_of_items().')', array('id' => 'navbar-cart-link'));
             echo '</li>';

@@ -13,6 +13,10 @@ Class Customer extends CI_Model {
     parent::__construct();
   }
 
+  public function getName() {
+    return $this->first . ' ' . $this->last;
+  }
+
   function save() {
     $this->db->insert('customers', $this);
   }
