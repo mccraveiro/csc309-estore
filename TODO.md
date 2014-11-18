@@ -1,4 +1,3 @@
 - add view order list for customers
-- remove product image on delete
 - email receipt
 - add success message when finishing order

@@ -109,6 +109,8 @@ class Product_Ctrl extends CI_Controller {
     $this->load->model('product_model');
 
     if (isset($id)) {
+      $product = $this->product_model->get($id);
+      unlink('./images/product/'.$product->photo_url);
       $this->product_model->delete($id);
     }
 
