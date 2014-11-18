@@ -31,9 +31,9 @@
         <div class="col-sm-10 col-sm-offset-1">
           <p class="well">
             <strong>Credit Card Number</strong><br>
-            2323 2312 2313 2312<br><br>
+            <?= preg_replace('/(\d{1,4})(?=(\d{4})+$)/', '$1 ', $order->creditcard_number) ?><br><br>
             <strong>Expiration Date</strong><br>
-            09 / 2017
+            <?= sprintf('%02d', $order->creditcard_month); ?> / 20<?= $order->creditcard_year ?>
           </p>
         </div>
       </div>

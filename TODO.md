@@ -1,4 +1,3 @@
-- show creditcard info on checkout review
 - email receipt
 - add notification for actions
   - notification when added to cart
@@ -9,3 +8,4 @@
 - improve receipt print styles
 - secure receipt view (admin or custumer who made the order)
 - message when no customers
+- add view order list for customers
