@@ -1,3 +1,1 @@
-- add view order list for customers
 - email receipt
-- add success message when finishing order

@@ -58,6 +58,7 @@ $route['checkout'] = 'checkout_ctrl';
 $route['checkout/review'] = 'checkout_ctrl/review';
 
 $route['receipt/(:num)'] = 'receipt_ctrl/index/$1';
+$route['orders'] = 'receipt_ctrl/list_orders';
 
 $route['admin/customers'] = 'admin_ctrl/list_customers';
 $route['admin/customers/delete/(:num)'] = 'admin_ctrl/delete_customer/$1';

@@ -19,4 +19,17 @@ class Receipt_Ctrl extends CI_Controller {
     $data['order'] = $order;
     $this->load->view('receipt/index', $data);
   }
+
+  function list_orders() {
+
+    if (!is_logged()) {
+      redirect('/');
+    }
+
+    $this->load->model('orders');
+    $this->load->model('order');
+
+    $data['orders'] = $this->orders->getAllFromCustomer(get_customer_id());
+    $this->load->view('orders', $data);
+  }
 }

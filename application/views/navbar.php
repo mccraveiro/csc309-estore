@@ -29,6 +29,9 @@
 
           if (is_logged()) {
             echo '<li>';
+            echo anchor('orders', 'My Orders');
+            echo '</li>';
+            echo '<li>';
             echo anchor('logout', 'Log out');
             echo '</li>';
           } else {
