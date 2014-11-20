@@ -31,6 +31,7 @@ class Cart_Ctrl extends CI_Controller {
 
     echo 'DEBUG - 1<br>';
     echo 'DEBUG - 1.1 - '. isset($this->cart->insertOrUpdate) .'<br>';
+    echo 'DEBUG - 1.2<br>';
 
     $this->cart->insertOrUpdate(array(
       'id'    => $product->id,
