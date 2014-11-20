@@ -30,7 +30,7 @@ class Cart_Ctrl extends CI_Controller {
     }
 
     echo 'DEBUG - 1<br>';
-    echo 'DEBUG - 1.1 - '.$qty.'<br>';
+    trigger_error('test', E_USER_NOTICE);
 
     $this->cart->insertOrUpdate(array(
       'id'    => $product->id,
