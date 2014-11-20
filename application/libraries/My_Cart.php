@@ -8,10 +8,14 @@ class MY_Cart extends CI_Cart {
 
   public function insertOrUpdate($items = array()) {
 
+    echo 'DEBUG - 2';
+
     if (!is_array($items) OR count($items) == 0) {
       log_message('error', 'The insertOrUpdate method must be passed an array containing data.');
       return FALSE;
     }
+
+    echo 'DEBUG - 3';
 
     $save_cart = FALSE;
     if (isset($items['id'])) {
@@ -28,14 +32,17 @@ class MY_Cart extends CI_Cart {
       }
     }
 
+    echo 'DEBUG - 4';
+
     // Save the cart data if the insert was successful
     if ($save_cart == TRUE) {
       $this->_save_cart();
       return isset($rowid) ? $rowid : TRUE;
     }
 
-    return FALSE;
+    echo 'DEBUG - 5';
 
+    return FALSE;
   }
 
   private function _insertOrUpdate($item) {
