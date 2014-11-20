@@ -30,7 +30,8 @@ class Cart_Ctrl extends CI_Controller {
     }
 
     echo 'DEBUG - 1<br>';
-    trigger_error('test', E_USER_NOTICE);
+
+    print_r($this->cart);
 
     $this->cart->insertOrUpdate(array(
       'id'    => $product->id,
