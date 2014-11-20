@@ -28,6 +28,8 @@ class Cart_Ctrl extends CI_Controller {
       $qty = $this->input->post('qty');
     }
 
+    echo 'DEBUG - 1';
+
     $this->cart->insertOrUpdate(array(
       'id'    => $product->id,
       'qty'   => $qty,
