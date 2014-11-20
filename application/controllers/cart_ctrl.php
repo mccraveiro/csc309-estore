@@ -13,7 +13,6 @@ class Cart_Ctrl extends CI_Controller {
   }
 
   function add($id) {
-    $this->load->library('cart');
     $this->load->model('product_model');
     $qty = 1;
     $product = $this->product_model->get($id);
@@ -30,8 +29,7 @@ class Cart_Ctrl extends CI_Controller {
     }
 
     echo 'DEBUG - 1<br>';
-
-    print_r($this->cart);
+    echo 'DEBUG - 1.1 - '. isset($this->cart->insertOrUpdate) .'<br>';
 
     $this->cart->insertOrUpdate(array(
       'id'    => $product->id,
