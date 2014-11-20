@@ -53,7 +53,6 @@ class Receipt_Ctrl extends CI_Controller {
       'smtp_port' => 465,
       'smtp_user' => '', // Fill in with your credentials
       'smtp_pass' => '', // Fill in with your credentials
-      'smtp_timeout' => 1,
       'mailtype'  => 'html',
       'charset'   => 'utf-8'
     );
