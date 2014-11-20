@@ -1,3 +1,7 @@
+body.wait {
+  cursor: wait;
+}
+
 .checkout-header {
   margin-bottom: 70px;
 }

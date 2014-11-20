@@ -28,3 +28,12 @@ if (!function_exists('get_customer_id')) {
     return $CI->session->userdata('id');
   }
 }
+
+if (!function_exists('get_customer_email')) {
+  function get_customer_email() {
+    $CI =& get_instance();
+    $CI->load->library('session');
+
+    return $CI->session->userdata('email');
+  }
+}
